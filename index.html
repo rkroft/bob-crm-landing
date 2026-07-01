@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meet Bob — the CRM I built for my people</title>
-<meta name="description" content="Bob is a personal relationship CRM I built with Claude Code to keep up with the people in my world — who introduced whom, what those intros became, and who I owe a hello.">
+<title>Meet Bob, my networker-in-chief</title>
+<meta name="description" content="Bob is a personal network management system (NMS) I built with Claude Code to keep up with the people in my world — who introduced whom, what those intros became, and who I owe a hello.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -86,12 +86,13 @@
   .phone-top span{font-size:.7rem;color:#25a768;font-weight:700}
   .chat{display:flex;flex-direction:column;gap:8px;padding:16px 12px;background:#efe7dd;
     background-image:radial-gradient(rgba(150,110,80,.09) 1px,transparent 1px);background-size:20px 20px}
-  .bub{max-width:86%;padding:8px 11px 6px;border-radius:11px;font-size:.82rem;font-weight:500;line-height:1.45;
-    box-shadow:0 1px .5px rgba(0,0,0,.13)}
-  .me{align-self:flex-end;background:#d9fdd3;color:#111b21;border-top-right-radius:3px}
-  .bob{align-self:flex-start;background:#fff;color:#111b21;border-top-left-radius:3px}
-  .bub .tm{display:block;text-align:right;font-size:.58rem;color:#667781;margin-top:2px;font-weight:600}
-  .me .tm{color:#5aa17d}
+  .bub{max-width:80%;padding:6px 9px 6px 11px;border-radius:8px;font-size:.82rem;font-weight:400;
+    line-height:1.35;text-align:left;box-shadow:0 1px .5px rgba(0,0,0,.13)}
+  .me{align-self:flex-end;background:#d9fdd3;color:#111b21;border-top-right-radius:2px}
+  .bob{align-self:flex-start;background:#fff;color:#111b21;border-top-left-radius:2px}
+  .bub .tm{float:right;font-size:.6rem;color:#667781;font-weight:400;
+    margin:6px -2px -2px 10px;line-height:1;position:relative;top:2px}
+  .me .tm{color:#667781}
   .pt-back{color:#54656f;font-size:1.5rem;line-height:1;font-weight:700;margin:0 -3px 0 -2px}
   .pt-name{flex:1;min-width:0}
   .pt-name b{font-size:.92rem;color:#111b21;display:block;line-height:1.2}
@@ -99,10 +100,16 @@
   .pt-icons{display:flex;gap:13px;font-size:.92rem;opacity:.75}
   .chat-day{align-self:center;background:#fff;color:#54656f;font-size:.6rem;font-weight:700;
     padding:4px 10px;border-radius:8px;box-shadow:0 1px 1px rgba(0,0,0,.05);margin:2px 0 4px}
-  .wa-input{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#f0f2f5}
-  .wa-input .field{flex:1;background:#fff;border-radius:18px;padding:7px 13px;font-size:.78rem;color:#9aa6ae}
-  .wa-input .mic{width:30px;height:30px;border-radius:50%;background:#25a768;display:grid;
-    place-items:center;color:#fff;font-size:.8rem;flex-shrink:0}
+  .wa-input{display:flex;align-items:center;gap:9px;padding:8px 9px;background:#f0f2f5}
+  .wa-input .plus{color:#54656f;font-size:1.5rem;font-weight:300;line-height:1;flex-shrink:0;padding:0 3px}
+  .wa-input .field{flex:1;display:flex;align-items:center;background:#fff;border-radius:19px;
+    padding:8px 12px;min-height:34px}
+  .wa-input .field .caret{width:1.5px;height:15px;background:#25a768;display:inline-block;
+    animation:blink 1.1s step-end infinite}
+  .wa-input .field .emoji{margin-left:auto;font-size:1.05rem;color:#8696a0;line-height:1}
+  .wa-input .mic{width:34px;height:34px;border-radius:50%;background:#25a768;display:grid;
+    place-items:center;color:#fff;font-size:.9rem;flex-shrink:0}
+  @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 
   /* ---------- sections ---------- */
   section{padding:72px 0}
@@ -218,7 +225,8 @@
   .wa-msg .sec{font-weight:800;display:block;margin-top:8px}
   .wa-msg b{font-weight:800}
   .wa-msg em{font-style:italic;color:#3a6b3a}
-  .wa-msg .tm{display:block;text-align:right;font-size:.6rem;color:#667781;margin-top:3px;font-weight:600}
+  .wa-msg .tm{float:right;font-size:.6rem;color:#667781;font-weight:400;
+    margin:6px -2px -2px 10px;line-height:1;position:relative;top:2px}
 
   /* wrapped email mock */
   .wrap-email{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;
@@ -269,7 +277,7 @@
 
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none}
-    .wa-scroll{animation:none}
+    .wa-scroll,.wa-input .field .caret{animation:none}
     html{scroll-behavior:auto}
   }
 </style>
@@ -292,8 +300,8 @@
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <h1>Meet <em>Bob</em>, the&nbsp;CRM<br>I built for my people.</h1>
-    <p class="lede">A little system that remembers who introduced whom &amp; what those intros became.</p>
+    <h1>Meet <em>Bob</em>, my networker-in-chief</h1>
+    <p class="lede">A little system that remembers who introduced us — and what came of it.</p>
     <div class="cta-row">
       <a href="#how" class="btn btn-primary">See how it works →</a>
       <a href="#why" class="btn btn-ghost">Why I made it</a>
@@ -317,7 +325,8 @@
           <div class="bub bob">done 👍 also — you haven't talked to Jen in 5 months, and she's introduced you to 5 people this year. want a reconnect note?<span class="tm">9:42 AM</span></div>
         </div>
         <div class="wa-input">
-          <div class="field">Message</div>
+          <span class="plus">+</span>
+          <div class="field"><span class="caret"></span><span class="emoji">☺</span></div>
           <div class="mic">🎤</div>
         </div>
        </div>
@@ -331,8 +340,8 @@
   <div class="wrap whatgrid">
     <div class="reveal">
       <h2>So… what <em class="accent">is</em> Bob?</h2>
-      <p>Bob is a <b>relationship CRM I built for myself</b> — a memory for the network I care about. Investors, founders, friends, clients, former colleagues, friends-of-friends, "the person someone swore I had to meet."</p>
-      <p>Most CRMs are built to <em>sell to</em> people. Bob is built to <em>keep up with</em> them, and to help me authentically connect over time. It tracks the things that actually matter in a relationship: who connected us, what came of it, when we last spoke, what help they need or what's on their mind, and who I should reach out to next.</p>
+      <p>Bob is a <b>network management system (NMS) I built for myself</b> — a memory for the network I care about. Investors, founders, friends, clients, professors, former colleagues, friends-of-friends, "the person someone swore I had to meet."</p>
+      <p>Similar tools (CRM) are built to <em>sell to</em> people. Bob is built to <em>keep up with</em> them, and to help me authentically connect over time. It tracks the things that actually matter in a relationship: who connected us, what came of it, when we last spoke, what help they need or what's on their mind, and who I should reach out to next.</p>
       <p class="pull">It turns a thousand "I should really email them back" moments into one place that actually remembers.</p>
     </div>
     <div class="reveal stat-card">
@@ -664,7 +673,7 @@
 <footer>
   <div class="wrap">
     <div class="logo"><span class="dot">b</span> Bob</div>
-    <p>A personal relationship CRM, built by Rachel Kroft to keep up with the people who matter.</p>
+    <p>A personal network management system, built by Rachel Kroft to keep up with the people who matter.</p>
     <p class="small">Made with Claude Code · the relationships are the work ✦</p>
   </div>
 </footer>
