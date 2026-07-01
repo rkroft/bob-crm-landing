@@ -61,7 +61,10 @@
     background:rgba(255,185,138,.28);padding:7px 15px;border-radius:999px;margin-bottom:24px}
   .hero h1{font-size:clamp(2.5rem,6vw,4.3rem);margin-bottom:20px}
   .hero h1 em{font-style:italic;color:var(--coral-deep)}
-  .lede{font-size:clamp(1.1rem,2.3vw,1.4rem);color:var(--ink-soft);max-width:660px;margin:0 auto 34px;font-weight:500}
+  .lede{font-size:clamp(1.1rem,2.3vw,1.4rem);color:var(--ink-soft);max-width:600px;margin:0 auto 34px;
+    font-weight:500;line-height:1.5;text-wrap:balance}
+  .lede .amp{font-family:'Fraunces','Georgia',serif;font-style:italic;color:inherit;
+    font-weight:600;font-size:1.18em;padding:0 3px;vertical-align:-.02em}
   .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Nunito';font-weight:700;font-size:1rem;
     text-decoration:none;padding:14px 26px;border-radius:14px;cursor:pointer;border:none;transition:transform .18s,box-shadow .18s}
@@ -72,19 +75,34 @@
 
   /* phone mock */
   .hero-stage{margin-top:58px;display:flex;justify-content:center;perspective:1200px}
-  .phone{width:300px;background:#fffdfa;border-radius:34px;padding:14px;
+  .phone{width:296px;background:#111b21;border-radius:32px;padding:5px;
     box-shadow:0 40px 80px -34px rgba(120,60,40,.6),0 0 0 1px rgba(180,120,90,.1);
     transform:rotateX(6deg);transition:transform .5s}
   .phone:hover{transform:rotateX(0deg)}
-  .phone-top{display:flex;align-items:center;gap:9px;padding:6px 8px 12px}
-  .phone-top .av{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#ffd9b0,var(--coral) 70%);display:grid;place-items:center;color:#fff;font-size:.8rem;font-weight:700}
-  .phone-top b{font-size:.95rem}
-  .phone-top span{font-size:.72rem;color:var(--sage);font-weight:700}
-  .chat{display:flex;flex-direction:column;gap:9px;padding:6px 6px 12px}
-  .bub{max-width:82%;padding:9px 13px;border-radius:16px;font-size:.86rem;font-weight:500;line-height:1.4}
-  .me{align-self:flex-end;background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;border-bottom-right-radius:5px}
-  .bob{align-self:flex-start;background:#f1e7da;color:var(--ink);border-bottom-left-radius:5px}
-  .bob .tag{display:block;font-size:.68rem;font-weight:800;color:var(--sage);margin-top:5px}
+  .phone-screen{border-radius:28px;overflow:hidden}
+  .phone-top{display:flex;align-items:center;gap:10px;padding:12px 15px;background:#f0f2f5}
+  .phone-top .av{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#ffd9b0,var(--coral) 70%);display:grid;place-items:center;color:#fff;font-size:.92rem;font-weight:700;flex-shrink:0}
+  .phone-top b{font-size:.94rem;color:#111b21;display:block;line-height:1.2}
+  .phone-top span{font-size:.7rem;color:#25a768;font-weight:700}
+  .chat{display:flex;flex-direction:column;gap:8px;padding:16px 12px;background:#efe7dd;
+    background-image:radial-gradient(rgba(150,110,80,.09) 1px,transparent 1px);background-size:20px 20px}
+  .bub{max-width:86%;padding:8px 11px 6px;border-radius:11px;font-size:.82rem;font-weight:500;line-height:1.45;
+    box-shadow:0 1px .5px rgba(0,0,0,.13)}
+  .me{align-self:flex-end;background:#d9fdd3;color:#111b21;border-top-right-radius:3px}
+  .bob{align-self:flex-start;background:#fff;color:#111b21;border-top-left-radius:3px}
+  .bub .tm{display:block;text-align:right;font-size:.58rem;color:#667781;margin-top:2px;font-weight:600}
+  .me .tm{color:#5aa17d}
+  .pt-back{color:#54656f;font-size:1.5rem;line-height:1;font-weight:700;margin:0 -3px 0 -2px}
+  .pt-name{flex:1;min-width:0}
+  .pt-name b{font-size:.92rem;color:#111b21;display:block;line-height:1.2}
+  .pt-name span{font-size:.68rem;color:#667781;font-weight:600}
+  .pt-icons{display:flex;gap:13px;font-size:.92rem;opacity:.75}
+  .chat-day{align-self:center;background:#fff;color:#54656f;font-size:.6rem;font-weight:700;
+    padding:4px 10px;border-radius:8px;box-shadow:0 1px 1px rgba(0,0,0,.05);margin:2px 0 4px}
+  .wa-input{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#f0f2f5}
+  .wa-input .field{flex:1;background:#fff;border-radius:18px;padding:7px 13px;font-size:.78rem;color:#9aa6ae}
+  .wa-input .mic{width:30px;height:30px;border-radius:50%;background:#25a768;display:grid;
+    place-items:center;color:#fff;font-size:.8rem;flex-shrink:0}
 
   /* ---------- sections ---------- */
   section{padding:72px 0}
@@ -138,7 +156,8 @@
   .why .wrap{position:relative;z-index:1}
   .why .section-head h2{color:#fff}
   .why .section-head .kicker{color:var(--peach)}
-  .why-body{max-width:760px;margin:0 auto;text-align:center}
+  .why .section-head{text-align:left;max-width:760px}
+  .why-body{max-width:760px;margin:0 auto;text-align:left}
   .why-body p{font-size:1.18rem;line-height:1.75;margin-bottom:22px;color:#f3e3d8;font-weight:500}
   .why-body p.big{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3.5vw,2.1rem);font-style:italic;
     color:#fff;line-height:1.35;font-weight:400}
@@ -167,7 +186,8 @@
     box-shadow:0 16px 32px -16px rgba(120,60,40,.55)}
   .viz-detail .nm{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem}
   .viz-detail .star{display:block;color:var(--gold);font-weight:800;font-size:.68rem;letter-spacing:.05em;margin:2px 0 9px}
-  .viz-detail .row{display:flex;justify-content:space-between;font-size:.78rem;color:var(--ink-soft);font-weight:600;padding:3px 0}
+  .viz-detail .row{display:flex;align-items:flex-start;gap:10px;font-size:.78rem;color:var(--ink-soft);font-weight:600;padding:3px 0}
+  .viz-detail .row span{width:84px;flex-shrink:0}
   .viz-detail .row b{color:var(--ink)}
   @media(max-width:640px){.viz-detail{position:static;width:auto;margin:14px 16px 0}}
   .viz-legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:20px}
@@ -273,7 +293,7 @@
 <header class="hero">
   <div class="wrap">
     <h1>Meet <em>Bob</em>, the&nbsp;CRM<br>I built for my people.</h1>
-    <p class="lede">A little system that remembers who introduced whom, what those intros became.</p>
+    <p class="lede">A little system that remembers who introduced whom &amp; what those intros became.</p>
     <div class="cta-row">
       <a href="#how" class="btn btn-primary">See how it works →</a>
       <a href="#why" class="btn btn-ghost">Why I made it</a>
@@ -281,16 +301,26 @@
 
     <div class="hero-stage">
       <div class="phone">
+       <div class="phone-screen">
         <div class="phone-top">
+          <span class="pt-back">‹</span>
           <div class="av">b</div>
-          <div><b>Bob</b><br><span>● online</span></div>
+          <div class="pt-name"><b>Bob</b><span>online</span></div>
+          <div class="pt-icons"><span>📹</span><span>📞</span></div>
         </div>
         <div class="chat">
-          <div class="bub me">Just had coffee with Maya Chen — Priya introduced us. She's raising a seed round.</div>
-          <div class="bub bob">Got it. Logged Maya Chen ☕<span class="tag">+ intro credited to Priya · context: fundraising · flagged to follow up</span></div>
-          <div class="bub me">Who haven't I talked to in a while?</div>
-          <div class="bub bob">7 people past 6 months. Want a warm reconnect note for Jen H.?<span class="tag">she's introduced you to 5 people this year ★ super-connector</span></div>
+          <div class="chat-day">Today</div>
+          <div class="bub me">just had coffee with Maya — Priya introduced us ☕<span class="tm">9:41 AM ✓✓</span></div>
+          <div class="bub me">she's raising a seed round<span class="tm">9:41 AM ✓✓</span></div>
+          <div class="bub bob">logged her ✅ credited the intro to Priya. want me to flag a follow-up?<span class="tm">9:41 AM</span></div>
+          <div class="bub me">yes please<span class="tm">9:42 AM ✓✓</span></div>
+          <div class="bub bob">done 👍 also — you haven't talked to Jen in 5 months, and she's introduced you to 5 people this year. want a reconnect note?<span class="tm">9:42 AM</span></div>
         </div>
+        <div class="wa-input">
+          <div class="field">Message</div>
+          <div class="mic">🎤</div>
+        </div>
+       </div>
       </div>
     </div>
   </div>
@@ -319,7 +349,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">How it works</div>
-      <h2>Capture → enrich → connect</h2>
+      <h2>Capture → Enrich → Connect</h2>
       <p>Bob runs in the background. I just talk to it, and it does the filing.</p>
     </div>
     <div class="steps">
@@ -360,57 +390,21 @@
         <div><b>Bob</b><span class="st">● online</span></div>
       </div>
       <div class="wa-viewport"><div class="wa-scroll">
-        <div class="wa-date">Mon, this week</div>
+        <div class="wa-msg wa-out">Jane Doe, founder of Acme — met at the SaaS dinner<span class="tm">2:43 PM ✓✓</span></div>
+        <div class="wa-msg wa-in">Got it — logged Jane Doe ☕ flagged to follow up.<span class="tm">2:43 PM</span></div>
 
-        <div class="wa-msg wa-in" style="max-width:94%">
-          <span class="hd">Bob-date · week of the 16th</span>
-          <span class="sec">Captured this week</span>
-          <b>Updated</b><br>
-          • Priya N. — met in person at the Open Play demo, the 21st, Seattle. Last Connected → 3/21. Work email appended.<br>
-          <b style="display:block;margin-top:6px">New contact</b>
-          • Marcus Lee (marcus@acme.co) — Acme; met at the demo on the 21st.<br>
-          <b style="display:block;margin-top:6px">Already current</b>
-          • Dana Ruiz: coffee on the 16th · Theo Park: 1:1 on the 17th · Nina Cole: call on the 18th<br><br>
-          No new email intros. No bounces or job changes.
-          <span class="tm">10:57 PM</span>
-        </div>
+        <div class="wa-date">Monday</div>
 
-        <div class="wa-msg wa-in" style="max-width:94%">
-          <span class="hd">Needs your eyes</span>
-          <b>1.</b> Dana Ruiz — two records for the same person; one already notes both emails. <em>Recommend: delete the duplicate.</em><br><br>
-          <b>2.</b> Lunch w/ Jess &amp; Mara, the 17th — no attendee emails on the calendar. CRM-worthy? <em>Recommend: skip unless you have their emails.</em><br><br>
-          <b>3.</b> Priya N. — title flagged in an earlier pass; work email now confirmed. <em>Recommend: flip to Approved.</em><br><br>
-          Reply with the item # + your call, e.g. "1: delete dup"
-          <span class="tm">10:57 PM</span>
-        </div>
-
-        <div class="wa-msg wa-out"><b>1</b>: delete dup, <b>3</b>: approve<span class="tm">11:04 PM</span></div>
-        <div class="wa-msg wa-in">On it ✅ Merged Dana's duplicate and flipped Priya to Approved.<span class="tm">11:04 PM</span></div>
-
-        <div class="wa-date">Later that week</div>
-
-        <div class="wa-msg wa-in" style="max-width:94%">
-          <span class="hd">🔗 Reconnect nudges — high-value, gone cold</span>
-          • Alex Moreno (Director, Foster Labs) — 1.8y cold<br>
-          • Brooke Tan (Founder, Sprout) — 1.2y cold<br>
-          • Laurel Kim (Parent-founder &amp; CEO) — 1.8y cold<br>
-          • Devon Carson (Founder, an AI startup) — 1.1y cold<br>
-          • Dan Whitfield (Director of Engineering) — 6.5y cold<br>
-          • Rae Duncan (Managing Director) — 2.5y cold<br><br>
-          Reply with a name and I'll draft an opener.
+        <div class="wa-msg wa-in" style="max-width:92%">
+          <span class="hd">Bob-date · this week</span>
+          Captured 2 new people, kept 3 current.<br>
+          <b>Needs your eyes:</b> 1 possible duplicate — reply "1" to merge.
           <span class="tm">8:08 AM</span>
         </div>
-
-        <div class="wa-msg wa-out">Draft one for Brooke Tan<span class="tm">8:15 AM</span></div>
-        <div class="wa-msg wa-in">Pulling up what your last few exchanges were about — draft coming ✍️<span class="tm">8:15 AM</span></div>
-
-        <div class="wa-date">Friday</div>
-
-        <div class="wa-msg wa-out">Jane Doe, founder of Acme, at the SaaS dinner<span class="tm">2:43 PM</span></div>
-        <div class="wa-msg wa-in">Got it — logged Jane Doe ☕ tagged met-in-person and flagged to follow up.<span class="tm">2:43 PM</span></div>
+        <div class="wa-msg wa-out">1<span class="tm">8:12 AM ✓✓</span></div>
+        <div class="wa-msg wa-in">Merged ✅ You've now gone quiet on 3 high-value contacts. Want a reconnect note for any?<span class="tm">8:12 AM</span></div>
       </div></div>
     </div>
-    <p class="viz-cap reveal">A real weekly digest — <em>every name, email, and company here is made up</em>.</p>
   </div>
 </section>
 
@@ -420,7 +414,6 @@
     <div class="section-head reveal">
       <div class="kicker">Under the hood</div>
       <h2>The little things Bob does</h2>
-      <p>Each one started as a "wouldn't it be nice if…" and became a feature.</p>
     </div>
     <div class="feat-grid">
       <div class="feat reveal"><div class="fic">📲</div><div><h4>Text-to-log</h4><p>Add or update anyone with a single WhatsApp message — no app, no form, no laptop.</p></div></div>
@@ -430,7 +423,7 @@
       <div class="feat reveal"><div class="fic">⚖️</div><div><h4>Giving &amp; getting</h4><p>Shows who I owe a thank-you and who I've championed — so my relationships stay balanced, never one-sided.</p></div></div>
       <div class="feat reveal"><div class="fic">⏳</div><div><h4>"Who've I gone quiet on?"</h4><p>Watches my last real conversation with each person and surfaces the ones slipping away.</p></div></div>
       <div class="feat reveal"><div class="fic">🗺️</div><div><h4>Live network map</h4><p>An interactive view of communities, leaderboards, and click-to-detail profiles.</p></div></div>
-      <div class="feat reveal"><div class="fic">💌</div><div><h4>Warm-note drafting</h4><p>Writes a reconnect note in my own voice, grounded in our real shared history.</p></div></div>
+      <div class="feat reveal"><div class="fic">💌</div><div><h4>Warm-note &amp; thank-you drafting</h4><p>Writes a reconnect note in my own voice, grounded in our real shared history — and thank-you notes that capture what a connection led to.</p></div></div>
     </div>
   </div>
 </section>
@@ -555,7 +548,7 @@
           <div class="row"><span>Intros made</span><b>5 this year</b></div>
           <div class="row"><span>Community</span><b>Founders</b></div>
           <div class="row"><span>Last connected</span><b>3 weeks ago</b></div>
-          <div class="row"><span>Led to</span><b>2 clients</b></div>
+          <div class="row"><span>Impact</span><b>2 clients</b></div>
         </div>
       </div>
     </div>
@@ -589,17 +582,13 @@
       <div class="we-meta"><span class="to">Me → sam@example.com</span><span>end of quarter</span></div>
       <div class="we-body">
         <p>Sam —</p>
-        <p>I was reflecting on my network and community this past year and you came to mind. When I actually counted, you've personally connected me to <b>nine people</b> across the startup community — most of them in a single twelve-month stretch. That puts you on a very short list; you're one of only two people who've introduced me to that many.</p>
-        <p>A few that have really stuck:</p>
+        <p>Looking back over this past year, you stood out. You've personally introduced me to <b>nine people</b> — one of only two who've connected me to that many. A couple that really stuck:</p>
         <ul>
-          <li>Two founders, both early last year — right when I was first sketching out the new thing I was building. You had a sense of who I needed to be talking to before I did.</li>
-          <li>A professor at a top business school that summer, which pulled me into the whole entrepreneurship-mentoring world I'm now part of.</li>
-          <li>An investor I asked you for — that one you turned around so fast I ended up across a table from him the same week.</li>
-          <li>A co-mentor through an accelerator cohort, which has grown into a real collaboration, not just a coffee.</li>
-          <li>And a newcomer to the city this winter — exactly the kind of "help someone land softly" intro I try to pay forward.</li>
+          <li>Two founders, right as I was starting the new thing I was building — you knew who I needed before I did.</li>
+          <li>An investor I asked you for, turned around so fast I was across the table from him that same week.</li>
         </ul>
-        <p>The throughline is that you never do transactional intros. Every one came with context and a reason, and a "I think you two will really get along" that kept turning out to be right.</p>
-        <p>So — thank you. I'd love to return the favor: tell me who you're trying to reach right now, and let me go to work on it. And if it's just easier to talk, grab any time that works:</p>
+        <p>You never do transactional intros — every one came with context and a "you two will really get along" that kept being right.</p>
+        <p>So — thank you. Tell me who you're trying to reach next, and grab any time that works:</p>
         <p><a href="https://book.vimcal.com/p/rachelkroft/30-minute-meeting">book.vimcal.com/p/rachelkroft/30-minute-meeting</a></p>
         <p class="sig">Rachel</p>
       </div>
