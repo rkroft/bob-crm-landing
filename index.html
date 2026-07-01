@@ -93,6 +93,8 @@
   .bub .tm{float:right;font-size:.6rem;color:#667781;font-weight:400;
     margin:6px -2px -2px 10px;line-height:1;position:relative;top:2px}
   .me .tm{color:#667781}
+  .bub .hd{font-weight:700;display:block;margin-bottom:3px}
+  .bub b{font-weight:700}
   .pt-back{color:#54656f;font-size:1.5rem;line-height:1;font-weight:700;margin:0 -3px 0 -2px}
   .pt-name{flex:1;min-width:0}
   .pt-name b{font-size:.92rem;color:#111b21;display:block;line-height:1.2}
@@ -202,31 +204,6 @@
   .viz-legend i{width:12px;height:12px;border-radius:50%;display:block}
   .viz-cap{text-align:center;color:var(--ink-soft);font-size:.9rem;font-weight:600;margin-top:18px}
   .viz-cap em{font-style:normal;color:var(--coral-deep);font-weight:700}
-
-  /* whatsapp chat mock — card w/ gentle auto-scroll */
-  .wa-card{max-width:390px;margin:0 auto;border-radius:20px;overflow:hidden;
-    box-shadow:var(--shadow);border:1px solid rgba(180,120,90,.14)}
-  .wa-head{display:flex;align-items:center;gap:11px;background:#f0f2f5;padding:11px 16px}
-  .wa-head .av{width:38px;height:38px;border-radius:50%;
-    background:radial-gradient(circle at 32% 30%,#ffd9b0,var(--coral) 70%);
-    display:grid;place-items:center;color:#fff;font-weight:700;font-size:1rem;flex-shrink:0}
-  .wa-head b{font-size:.98rem;color:#111b21;display:block}
-  .wa-head .st{font-size:.72rem;color:#25a768;font-weight:700}
-  .wa-viewport{background:#efe7dd;
-    background-image:radial-gradient(rgba(150,110,80,.09) 1px,transparent 1px);background-size:20px 20px}
-  .wa-scroll{padding:16px 12px;display:flex;flex-direction:column;gap:8px}
-  .wa-date{align-self:center;background:#fff;color:#54656f;font-size:.68rem;font-weight:700;
-    padding:5px 12px;border-radius:8px;box-shadow:0 1px 1px rgba(0,0,0,.05);margin:3px 0}
-  .wa-msg{max-width:90%;padding:9px 12px 7px;border-radius:11px;font-size:.82rem;line-height:1.5;
-    color:#111b21;box-shadow:0 1px .5px rgba(0,0,0,.13)}
-  .wa-in{align-self:flex-start;background:#fff;border-top-left-radius:3px}
-  .wa-out{align-self:flex-end;background:#d9fdd3;border-top-right-radius:3px}
-  .wa-msg .hd{font-weight:800;display:block;margin-bottom:5px}
-  .wa-msg .sec{font-weight:800;display:block;margin-top:8px}
-  .wa-msg b{font-weight:800}
-  .wa-msg em{font-style:italic;color:#3a6b3a}
-  .wa-msg .tm{float:right;font-size:.6rem;color:#667781;font-weight:400;
-    margin:6px -2px -2px 10px;line-height:1;position:relative;top:2px}
 
   /* wrapped email mock */
   .wrap-email{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;
@@ -393,26 +370,30 @@
       <p>No app to open, no forms. I text Bob like a friend — it logs new people, sends a weekly digest of what it captured and what needs my eyes, and nudges me toward the people I've gone cold on.</p>
     </div>
 
-    <div class="wa-card reveal">
-      <div class="wa-head">
-        <div class="av">b</div>
-        <div><b>Bob</b><span class="st">● online</span></div>
-      </div>
-      <div class="wa-viewport"><div class="wa-scroll">
-        <div class="wa-msg wa-out">Jane Doe, founder of Acme — met at the SaaS dinner<span class="tm">2:43 PM ✓✓</span></div>
-        <div class="wa-msg wa-in">Got it — logged Jane Doe ☕ flagged to follow up.<span class="tm">2:43 PM</span></div>
-
-        <div class="wa-date">Monday</div>
-
-        <div class="wa-msg wa-in" style="max-width:92%">
-          <span class="hd">Bob-date · this week</span>
-          Captured 2 new people, kept 3 current.<br>
-          <b>Needs your eyes:</b> 1 possible duplicate — reply "1" to merge.
-          <span class="tm">8:08 AM</span>
+    <div class="hero-stage reveal">
+      <div class="phone">
+       <div class="phone-screen">
+        <div class="phone-top">
+          <span class="pt-back">‹</span>
+          <div class="av">b</div>
+          <div class="pt-name"><b>Bob</b><span>online</span></div>
+          <div class="pt-icons"><span>📹</span><span>📞</span></div>
         </div>
-        <div class="wa-msg wa-out">1<span class="tm">8:12 AM ✓✓</span></div>
-        <div class="wa-msg wa-in">Merged ✅ You've now gone quiet on 3 high-value contacts. Want a reconnect note for any?<span class="tm">8:12 AM</span></div>
-      </div></div>
+        <div class="chat">
+          <div class="bub me">Jane Doe, founder of Acme — met at the SaaS dinner<span class="tm">2:43 PM ✓✓</span></div>
+          <div class="bub bob">Got it — logged Jane Doe ☕ flagged to follow up.<span class="tm">2:43 PM</span></div>
+          <div class="chat-day">Monday</div>
+          <div class="bub bob"><span class="hd">Bob-date · this week</span>Captured 2 new people, kept 3 current.<br><b>Needs your eyes:</b> 1 possible duplicate — reply "1" to merge.<span class="tm">8:08 AM</span></div>
+          <div class="bub me">1<span class="tm">8:12 AM ✓✓</span></div>
+          <div class="bub bob">Merged ✅ You've now gone quiet on 3 high-value contacts. Want a reconnect note for any?<span class="tm">8:12 AM</span></div>
+        </div>
+        <div class="wa-input">
+          <span class="plus">+</span>
+          <div class="field"><span class="caret"></span><span class="emoji">☺</span></div>
+          <div class="mic">🎤</div>
+        </div>
+       </div>
+      </div>
     </div>
   </div>
 </section>
