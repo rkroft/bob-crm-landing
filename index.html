@@ -198,14 +198,14 @@
   .viz-body text.vnode:hover{text-decoration:underline}
   @keyframes nodePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
   #selRing{transition:cx .2s,cy .2s,r .2s}
-  .viz-detail{position:absolute;top:16px;right:16px;width:188px;background:rgba(255,253,250,.97);
+  .viz-detail{position:absolute;top:16px;right:16px;width:230px;background:rgba(255,253,250,.97);
     backdrop-filter:blur(4px);border:1px solid rgba(180,120,90,.18);border-radius:14px;padding:13px 15px;
     box-shadow:0 16px 32px -16px rgba(120,60,40,.55)}
   .viz-detail .nm{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem}
   .viz-detail .star{display:block;color:var(--gold);font-weight:800;font-size:.68rem;letter-spacing:.05em;margin:2px 0 9px}
-  .viz-detail .row{display:flex;align-items:flex-start;gap:10px;font-size:.78rem;color:var(--ink-soft);font-weight:600;padding:3px 0}
-  .viz-detail .row span{width:84px;flex-shrink:0}
-  .viz-detail .row b{color:var(--ink)}
+  .viz-detail .row{display:flex;align-items:baseline;gap:8px;font-size:.78rem;color:var(--ink-soft);font-weight:600;padding:3px 0}
+  .viz-detail .row span{width:90px;flex-shrink:0;white-space:nowrap}
+  .viz-detail .row b{color:var(--ink);white-space:nowrap}
   @media(max-width:640px){.viz-detail{position:static;width:auto;margin:14px 16px 0}}
   .viz-legend{display:flex;flex-wrap:nowrap;gap:15px;justify-content:center;margin-top:20px}
   .viz-legend span{display:flex;align-items:center;gap:7px;font-size:.86rem;font-weight:700;color:var(--ink-soft);white-space:nowrap}
@@ -604,11 +604,11 @@
       <h2>My network is the work.</h2>
     </div>
     <div class="why-body reveal">
-      <p>I teach, I consult, and I invest: three careers running at once, and every one of them runs on people. Founders, students, operators, fellow investors, the friends who connect me to all of them. Over the years that's added up to a lot of relationships across a lot of different rooms. The relationships <em>are</em> the job. But the tools for keeping up with them were either glorified sales pipelines or a tangle of half-remembered email threads. Nothing knew the story — who introduced whom, what an intro turned into, who I owed a thank-you.</p>
-      <p>So I built the thing I actually wanted. Bob doesn't try to sell anyone anything. It just helps me be a better friend, connector, colleague, and investor — to show up for the people who show up for me, and to never let a good introduction go unanswered.</p>
+      <p>I teach, I consult, and I invest: three careers running at once, and every one of them runs on people. Founders, students, operators, fellow investors, the friends who connect me to all of them. Over the years that's added up to a lot of relationships across a lot of different rooms. The relationships <em>are</em> the job. But the tools for keeping up with them were either glorified sales pipelines or a tangle of half-remembered email threads. Nothing knew the story: who introduced whom, what an intro turned into, who I owed a thank-you.</p>
+      <p>So I built the thing I actually wanted. Bob doesn't try to sell anyone anything. It just helps me be a better friend, connector, colleague, and investor, to show up for the people who show up for me, and to never let a good introduction go unanswered.</p>
       <p>And the best part: I built it conversationally, with Claude Code, piece by piece. No engineering team, no SaaS subscription. Just me describing what I wished existed, and watching it come to life.</p>
-      <p>Of everything AI could help with, this is what I wanted it pointed at: human relationships. It's the connective tissue between people — who knows whom, who vouched for whom, what came of it — that makes relationships interesting. And relationships don't hold still. People move, roles shift, the thread between two people deepens or goes quiet. You can't evolve that narrative unless you keep up with it.</p>
-      <p class="big">I wanted a tool that protects that — not one that replaces it.</p>
+      <p>Of everything AI could help with, this is what I wanted it pointed at: human relationships. It's the connective tissue between people, who knows whom, who vouched for whom, what came of it, that makes relationships interesting. And relationships don't hold still. People move, roles shift, the thread between two people deepens or goes quiet. You can't evolve that narrative unless you keep up with it.</p>
+      <p class="big">I wanted a tool that protects that, not one that replaces it.</p>
     </div>
   </div>
 </section>
