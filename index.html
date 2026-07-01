@@ -192,9 +192,11 @@
   .viz-body{position:relative;background:linear-gradient(180deg,#fffdfa,#fdf4ea)}
   .viz-body svg{display:block;width:100%;height:auto}
   .viz-body .vnode{cursor:pointer}
-  .viz-body circle.vnode{transition:opacity .15s}
-  .viz-body circle.vnode:hover{opacity:.8}
+  .viz-body circle.vnode{transition:opacity .15s;transform-box:fill-box;transform-origin:center;
+    animation:nodePulse 1.9s ease-in-out infinite}
+  .viz-body circle.vnode:hover{opacity:.8;animation-play-state:paused}
   .viz-body text.vnode:hover{text-decoration:underline}
+  @keyframes nodePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
   #selRing{transition:cx .2s,cy .2s,r .2s}
   .viz-detail{position:absolute;top:16px;right:16px;width:188px;background:rgba(255,253,250,.97);
     backdrop-filter:blur(4px);border:1px solid rgba(180,120,90,.18);border-radius:14px;padding:13px 15px;
@@ -260,7 +262,7 @@
 
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none}
-    .wa-scroll,.wa-input .field .caret{animation:none}
+    .wa-scroll,.wa-input .field .caret,.viz-body circle.vnode{animation:none}
     html{scroll-behavior:auto}
   }
 </style>
@@ -699,6 +701,10 @@
     }
     document.querySelectorAll('.viz-body [data-k]').forEach(el=>{
       el.addEventListener('click',()=>select(el.getAttribute('data-k')));
+    });
+    // stagger the pulse so the clickable nodes feel alive, not synchronized
+    document.querySelectorAll('.viz-body circle[data-k]').forEach((el,i)=>{
+      el.style.animationDelay = (i*0.26)+'s';
     });
     select('jen');
   })();
