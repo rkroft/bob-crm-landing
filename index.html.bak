@@ -40,10 +40,10 @@
   .bar{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
     background:rgba(253,246,238,.82);border-bottom:1px solid rgba(180,120,90,.14)}
   .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.3rem;letter-spacing:-.01em}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem}
   .logo .dot{width:34px;height:34px;border-radius:50%;
-    background:var(--coral-deep);
-    box-shadow:0 6px 14px -4px rgba(214,91,60,.5);display:grid;place-items:center;color:#fff;font-size:1.05rem;padding-right:1px}
+    background:radial-gradient(circle at 32% 30%,#ffd9b0,var(--coral) 70%);
+    box-shadow:0 6px 14px -4px rgba(214,91,60,.6);display:grid;place-items:center;color:#fff;font-size:1rem}
   .navlinks{display:flex;gap:26px;font-size:.95rem;font-weight:600}
   .navlinks a{color:var(--ink-soft);text-decoration:none;transition:color .2s}
   .navlinks a:hover{color:var(--coral-deep)}
@@ -81,7 +81,7 @@
   .phone:hover{transform:rotateX(0deg)}
   .phone-screen{border-radius:28px;overflow:hidden}
   .phone-top{display:flex;align-items:center;gap:10px;padding:12px 15px;background:#f0f2f5}
-  .phone-top .av{width:36px;height:36px;border-radius:50%;background:var(--coral-deep);display:grid;place-items:center;color:#fff;font-size:.92rem;font-weight:600;font-style:italic;padding-right:1px;flex-shrink:0}
+  .phone-top .av{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#ffd9b0,var(--coral) 70%);display:grid;place-items:center;color:#fff;font-size:.92rem;font-weight:700;flex-shrink:0}
   .phone-top b{font-size:.94rem;color:#111b21;display:block;line-height:1.2}
   .phone-top span{font-size:.7rem;color:#25a768;font-weight:700}
   .chat{display:flex;flex-direction:column;gap:8px;padding:16px 12px;background:#efe7dd;
@@ -268,7 +268,7 @@
 
 <div class="bar">
   <div class="wrap">
-    <div class="logo"><span class="dot">b</span> bob<span style="color:var(--coral-deep)">.</span></div>
+    <div class="logo"><span class="dot">b</span> Bob</div>
     <nav class="navlinks">
       <a href="#what">What it is</a>
       <a href="#how">How it works</a>
@@ -658,7 +658,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="logo"><span class="dot">b</span> bob<span style="color:var(--coral-deep)">.</span></div>
+    <div class="logo"><span class="dot">b</span> Bob</div>
     <p>A personal network management system, built by Rachel Kroft to keep up with the people who matter.</p>
     <p class="small">Made with Claude Code · the relationships are the work ✦</p>
   </div>
